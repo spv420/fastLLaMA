@@ -30,7 +30,7 @@ IFS=","
 
 for i in $1; do
     venv/bin/python3 convert-pth-to-ggml.py models/$i/ 1
-    ./quantize.sh $i
+    venv/bin/python3 quantize.py $i
 done
 
 echo "models ready! run llama.cpp/main to use the models."
